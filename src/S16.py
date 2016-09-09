@@ -66,13 +66,16 @@ CONF['EMIRGE_BASEDIR'] = "/mnt/software/stow/emirge-v0.60-15-g0ddae1c-wilma/bin/
 # Subject: RE: RE: spike-in question
 #CONF['SSU_FA'] = '/mnt/genomeDB/misc/softwareDB/emirge/SSU_candidate_db.fasta'
 #CONF['SSU_FA'] = '/mnt/projects/wilma/16s/GERMS_16S_pipeline/ssu/SSU_candidate_db.p-knowlesi-spikein.fasta'
-CONF['SSU_FA'] = '/mnt/genomeDB/misc/softwareDB/GERMS_16S_pipeline/ssu/SSU_candidate_db.p-knowlesi-spikein.fasta'
+#CONF['SSU_FA'] = '/mnt/genomeDB/misc/softwareDB/GERMS_16S_pipeline/ssu/SSU_candidate_db.p-knowlesi-spikein.fasta'
+CONF['SSU_FA'] = '/home/bertrandd/PROJECT_LINK/OPERA_LG/SPUTUM_MICROBIOME/REFERENCE/ITS_reference/UNITE_public_22.08.2016.fasta'#bowtie (REQUIRED) and bwa (REQUIRED) index
 CONF['SSU_DB'] = CONF['SSU_FA'].replace('.fasta', '')
 CONF['SPIKEIN-NAME'] = "Plasmodium.knowlesi.profilin"
 #CONF['GG_REF'] = '/mnt/genomeDB/misc/greengenes.secondgenome.com/downloads/13_5/gg_13_5_otus/rep_set/99_otus.fasta'
 #CONF['GG_REF'] = '/mnt/projects/wilma/16s/GERMS_16S_pipeline/greengenes/99_otus.fasta'
-CONF['GG_REF'] = '/mnt/genomeDB/misc/softwareDB/GERMS_16S_pipeline/greengenes/13_5/99_otus.fasta'
-CONF['GG_TAX'] = '/mnt/genomeDB/misc/greengenes.secondgenome.com/downloads/13_5/gg_13_5_otus/taxonomy/99_otu_taxonomy.txt'
+##CONF['GG_REF'] = '/mnt/genomeDB/misc/softwareDB/GERMS_16S_pipeline/greengenes/13_5/99_otus.fasta'
+##CONF['GG_TAX'] = '/mnt/genomeDB/misc/greengenes.secondgenome.com/downloads/13_5/gg_13_5_otus/taxonomy/99_otu_taxonomy.txt'
+CONF['GG_REF'] = '/home/bertrandd/PROJECT_LINK/OPERA_LG/SPUTUM_MICROBIOME/REFERENCE/ITS_reference/sh_general_release_dynamic_22.08.2016.index.fa'#No index required. graphmap index is produce during mapping
+CONF['GG_TAX'] = '/home/bertrandd/PROJECT_LINK/OPERA_LG/SPUTUM_MICROBIOME/REFERENCE/ITS_reference/UNITE_public_22.08.2016.crossref'
 # programs
 CONF['FAMAS'] = "/mnt/software/stow/famas-0.0.7/bin/famas"
 CONF['PREFILTER'] = os.path.abspath(
@@ -85,8 +88,8 @@ CONF['IDENT_TO_BAM'] = os.path.abspath(
     os.path.join(os.path.dirname(sys.argv[0]), "ident_to_bam.py"))
 CONF['PLOT_RAREFACTION'] = os.path.abspath(
     os.path.join(os.path.dirname(sys.argv[0]), "plot_rarefaction.py"))
-#CONF['GRAPHMAP'] = '/mnt/software/stow/graphmap-0.2.2-dev-604a386/bin/graphmap'
-CONF['GRAPHMAP'] = '/mnt/software/stow/graphmap-0.3.0-1d16f07/bin/graphmap'
+CONF['GRAPHMAP'] = '/mnt/software/stow/graphmap-0.2.2-dev-604a386/bin/graphmap'
+#CONF['GRAPHMAP'] = '/mnt/software/stow/graphmap-0.3.0-1d16f07/bin/graphmap'
 CONF['BWA'] = '/mnt/software/stow/bwa-0.7.12/bin/bwa'
 #CONF['BLASTN'] = '/mnt/software/stow/ncbi-blast-2.2.28+/bin/blastn'
 CONF['CONVERT_TABLE'] = os.path.abspath(

@@ -103,8 +103,8 @@ rule emirge_vs_gg:
   #output: 'greengenes-hits-blast.csv'
   output:  'greengenes-hits-graphmap.bam'
   threads: 8
-  shell:  '{config[GRAPHMAP]} align -t {threads} -r {input.ref} -d {input.fa} | {config[IDENT_TO_BAM]}  - {output} {input.ref}'
-
+  #shell:  '{config[GRAPHMAP]} align -t {threads} -r {input.ref} -d {input.fa} | {config[IDENT_TO_BAM]}  - {output} {input.ref}'
+  shell:  '{config[GRAPHMAP]} -x illumina -t {threads} -r {input.ref} -d {input} | {config[IDENT_TO_BAM]}  - {output} {input.ref}'
 
 rule classify:
   input: query=rules.emirge_trim_primer.output, hits=rules.emirge_vs_gg.output, gg_tax=config['GG_TAX']

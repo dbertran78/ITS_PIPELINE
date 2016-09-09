@@ -27,10 +27,17 @@ def calc_ident(r, ref):
     """Computes pairwise identity of read r
     """
 
+    print r
+    print ref
+    print r.aligned_pairs
+
     if r.is_unmapped:
         return -1.0
     op_counts = {'indel': 0, 'match': 0, 'mismatch': 0}
     for (qpos, rpos) in r.aligned_pairs:
+        print ref[rpos].upper()
+        print r.seq[qpos].upper()
+        print "----"
         if qpos is None or rpos is None:
             op = 'indel'
         else:
@@ -41,6 +48,12 @@ def calc_ident(r, ref):
                 op = 'mismatch'
         op_counts[op] += + 1
     ident = op_counts['match']/float(sum(op_counts.values()))
+
+    print ident
+    print op_counts['match']
+    print op_counts['mismatch']
+    
+
     return ident
 
 
